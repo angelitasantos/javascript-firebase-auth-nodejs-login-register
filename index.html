@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - Controle de Gastos</title>
+
+    <link rel="shortcut icon" href="./static/img/logo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="./static/css/reset.css">
+    <link rel="stylesheet" href="./static/css/global.css">
+    <link rel="stylesheet" href="./static/css/styles.css">
+    <link rel="stylesheet" href="./static/css/responsive.css">
+
+</head>
+
+<body class="centralize">
+
+    <main class="centralize">
+
+        <form action="">
+            <fieldset>
+                <h1>Login</h1>
+                <section>
+                    <label>Email</label>
+                    <input type="email" name="email" id="email" onchange="onChangeEmail()">
+                    <span class="error" id="email-required-error">Email é obrigatório</span>
+                    <span class="error" id="email-invalid-error">Email é inválido</span>
+
+                    <label>Senha</label>
+                    <input type="password" name="password" id="password" onchange="onChangePassword()">
+                    <span class="error" id="password-required-error">Senha é obrigatória</span>
+                </section>
+
+                <section class="form-button">
+                    <button type="button" class="clear" disabled="true" id="recover-password-button"
+                        onclick="recoverPassword()">Recuperar
+                        Senha</button>
+                    <button type="button" class="solid" disabled="true" id="login-button"
+                        onclick="login()">Entrar</button>
+                    <button type="button" class="outline" onclick="register()">Registrar</button>
+                </section>
+            </fieldset>
+        </form>
+
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+    <script src="./static/js/firebase.js"></script>
+    <script src="./static/js/loading.js"></script>
+    <script src="./static/js/validations.js"></script>
+    <script src="./static/js/main.js"></script>
+
+</body>
+
+</html>
