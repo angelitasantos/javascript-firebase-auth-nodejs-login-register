@@ -3,7 +3,6 @@
 <html>
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,10 +10,75 @@
 
     <link rel="shortcut icon" href="../../static/img/logo.png" type="image/x-icon">
 
+    <link rel="stylesheet" href="../../static/css/reset.css">
+    <link rel="stylesheet" href="../../static/css/global.css">
+    <link rel="stylesheet" href="../../static/css/styles.css">
+    <link rel="stylesheet" href="../../static/css/home.css">
 </head>
 
 <body>
-    <h1>Home</h1>
+    <header>
+        <button type="button" class="outline" onclick="logout()">
+            Sair
+        </button>
+    </header>
+
+    <main>
+        <section class="centralize">
+            <ol>
+                <li class="expense">
+                    <b>07/02/2022</b>
+                    <p>R$ 10,00</p>
+                    <p>Supermercado</p>
+                </li>
+                <li class="income">
+                    <b>06/02/2022</b>
+                    <p>R$ 5.000,00</p>
+                    <p>Salário</p>
+                    <p>Empresa A</p>
+                </li>
+                <li class="expense">
+                    <b>06/02/2022</b>
+                    <p>EUR 5,00</p>
+                    <p>Transporte</p>
+                    <p>Metrô ida e volta</p>
+                </li>
+                <li class="expense">
+                    <b>07/02/2022</b>
+                    <p>R$ 10,00</p>
+                    <p>Supermercado</p>
+                </li>
+                <li class="income">
+                    <b>06/02/2022</b>
+                    <p>R$ 5.000,00</p>
+                    <p>Salário</p>
+                    <p>Empresa A</p>
+                </li>
+                <li class="expense">
+                    <b>06/02/2022</b>
+                    <p>EUR 5,00</p>
+                    <p>Transporte</p>
+                    <p>Metrô ida e volta</p>
+                </li>
+                <li class="expense">
+                    <b>04/02/2022</b>
+                    <p>USD 15,00</p>
+                    <p>Acomodaçao</p>
+                    <p>Mensalidade</p>
+                </li>
+            </ol>
+        </section>
+
+        <section class="centralize">
+            <button class="fab fixed bottom right">+</button>
+        </section>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+    <script src="../../static/js/firebase-init.js"></script>
+    <script src="../../static/js/auth-guard.js"></script>
+    <script src="../../static/js/home.js"></script>
 </body>
 
 </html>
