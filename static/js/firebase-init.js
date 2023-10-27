@@ -9,6 +9,7 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+
 const form = {
     email: () => document.getElementById('email'),
     emailInvalidError: () => document.getElementById('email-invalid-error'),
@@ -25,5 +26,4 @@ const form = {
     confirmPassword: () => document.getElementById('confirmPassword'),
     confirmPasswordDoesntMatchError: () => document.getElementById('password-doesnot-match-error'),
 }
-
 
