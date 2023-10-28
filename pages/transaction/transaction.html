@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Transação - Controle de Gastos</title>
+
+    <link rel="shortcut icon" href="../../static/img/logo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="../../static/css/reset.css">
+    <link rel="stylesheet" href="../../static/css/global.css">
+    <link rel="stylesheet" href="../../static/css/responsive.css">
+    <link rel="stylesheet" href="../../static/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <button type="button" class="outline" onclick="logout()">
+            Sair
+        </button>
+    </header>
+    <main class="centralize mt-10 mb-200">
+        <form class="form-transaction" action="">
+            <fieldset>
+                <h2>Adicionar Transação</h2>
+                <section class="form-options">
+                    <label>Transaçao</label>
+                    <input type="radio" name="type" checked id="expense">
+                    <label for="expense">Despesa</label>
+                    <input type="radio" name="type" id="income">
+                    <label for="income">Receita</label>
+                </section>
+
+                <section class="">
+                    <label>Data da transaçao *</label>
+                    <input type="date" id="date" onchange="onChangeDate()">
+                    <span class="error" id="date-required-error">Data é obrigatória/inválida</span>
+                </section>
+
+                <section class="">
+                    <label>Moeda *</label>
+                    <select>
+                        <option value="USD">Dólar</option>
+                        <option value="EUR">Euro</option>
+                        <option value="R$" selected>Real</option>
+                    </select>
+                </section>
+
+                <section class="">
+                    <label>Valor *</label>
+                    <input type="number" onchange="onChangeValue()" id="value">
+                    <span class="error" id="value-required-error">Valor é obrigatório</span>
+                    <span class="error" id="value-less-or-equal-to-zero-error">Valor deve ser maior que 0</span>
+                </section>
+
+                <section class="">
+                    <label>Tipo de transaçao *</label>
+                    <select onchange="onChangeTransactionType()" id="transaction-type">
+                        <option value="">-- Selecione um tipo de transaçao --</option>
+                        <option>Acomodaçao</option>
+                        <option>Alimentaçao</option>
+                        <option>Outros</option>
+                        <option>Salário</option>
+                        <option>Supermercado</option>
+                        <option>Transporte</option>
+                    </select>
+                    <span class="error" id="transaction-type-required-error">Tipo de Transação é obrigatório</span>
+                </section>
+
+                <section class="">
+                    <label>Descriçao</label>
+                    <input type="text">
+                </section>
+
+                <section class="form-button">
+                    <button type="button" class="solid" disabled="true" id="save-button">Salvar</button>
+                    <button type="button" class="outline" onclick="voltarHome()">Cancelar</button>
+                </section>
+            </fieldset>
+        </form>
+
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+    <script src="../../static/js/firebase-init.js"></script>
+    <script src="../../static/js/auth-guard.js"></script>
+    <script src="../../static/js/loading.js"></script>
+    <script src="../../static/js/transaction.js"></script>
+
+</body>
+
+</html>

@@ -13,7 +13,7 @@
     --color-light: #DEDEDE;
     --color-01: rgb(45, 211, 111);
     --font-size-title: 2.25rem;
-    --font-size-subtitle: 1rem;
+    --font-size-subtitle: 1.75rem;
     --font-size-text: 0.875rem;
     --font-family-title: "Poppins", "Roboto", sans-serif;
     --font-family-text: "DM Sans", "Roboto", sans-serif;
@@ -34,10 +34,25 @@ main {
     align-items: center;
 }
 
+header {
+    padding: 10px;
+    text-align: right;
+}
+
+header button {
+    width: 100px;
+}
+
 h1 {
     text-align: center;
     margin: 20px 0;
     font: 600 var(--font-size-title) var(--font-family-title);
+}
+
+h2 {
+    text-align: center;
+    margin: 20px 0;
+    font: 600 var(--font-size-subtitle) var(--font-family-title);
 }
 
 form {
@@ -46,12 +61,18 @@ form {
     border-radius: 5px;
 }
 
-fieldset,
-input,
-button {
+fieldset {
     margin: 10px;
-    padding: 5px;
     border-radius: 5px;
+}
+
+input,
+button,
+select {
+    margin: 0px 5px 2px 5px;
+    padding: 10px;
+    border-radius: 5px;
+    width: -webkit-fill-available;
 }
 
 input {
@@ -68,12 +89,47 @@ label {
     margin: 10px 10px 0px 10px;
 }
 
-input,
-button {
-    padding: 10px;
-    margin-bottom: 5px;
-    width: -webkit-fill-available;
+select {
+    margin: 5px 5px 0px 5px;
 }
 
+ol {
+    list-style-type: none;
+    padding: 0;
+}
 
+ol li {
+    cursor: pointer;
+    background: white;
+    padding: 8px 16px;
+    border-bottom: 1px solid gray;
+}
 
+ol li:hover {
+    opacity: 0.8;
+}
+
+ol li.expense {
+    border-left: 10px solid red;
+}
+
+ol li.income {
+    border-left: 10px solid blue;
+}
+
+p {
+    margin: 4px 0;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mb-200 {
+    margin-bottom: 200px;
+}
+
+.form-options {
+    display: flex;
+    margin-bottom: 20px;
+}

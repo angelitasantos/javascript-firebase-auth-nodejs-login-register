@@ -10,20 +10,5 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 
-const form = {
-    email: () => document.getElementById('email'),
-    emailInvalidError: () => document.getElementById('email-invalid-error'),
-    emailRequiredError: () => document.getElementById('email-required-error'),
-    
-    loginButton: () => document.getElementById('login-button'),
-    registerButton: () => document.getElementById('register-button'),
-    
-    password: () => document.getElementById('password'),
-    passwordRequiredError: () => document.getElementById('password-required-error'),
-    passwordMinLengthError: () => document.getElementById('password-min-length-error'),
-    recoverPasswordButton: () => document.getElementById('recover-password-button'),
 
-    confirmPassword: () => document.getElementById('confirmPassword'),
-    confirmPasswordDoesntMatchError: () => document.getElementById('password-doesnot-match-error'),
-}
 
