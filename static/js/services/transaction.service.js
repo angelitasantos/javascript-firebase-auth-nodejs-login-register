@@ -1,4 +1,5 @@
 const transactionService = {
+
     findByUser: user => {
         return firebase.firestore()
             .collection('transactions')
@@ -12,6 +13,7 @@ const transactionService = {
                 }));
             })
     },
+
     findByUid: uid => {
         return firebase.firestore()
             .collection('transactions')
@@ -21,17 +23,20 @@ const transactionService = {
                 return doc.data();
             })
     },
+
     remove: transaction => {
         return firebase.firestore()
             .collection('transactions')
             .doc(transaction.uid)
             .delete();
     },
+
     save: transaction => {
         return firebase.firestore()
             .collection('transactions')
             .add(transaction);
     },
+
     update: transaction => {
         return firebase.firestore()
             .collection('transactions')
@@ -39,3 +44,6 @@ const transactionService = {
             .update(transaction);
     }
 }
+
+
+

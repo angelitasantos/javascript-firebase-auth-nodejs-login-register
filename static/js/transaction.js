@@ -22,24 +22,20 @@ function isNewTransaction() {
 
 function findTransactionByUid(uid) {
     showLoading(5000);
-
-    firebase.firestore()
-        .collection('transactions')
-        .doc(uid)
-        .get()
-        .then(doc => {
+    transactionService.findByUid(uid)
+        .then(transaction => {
             hideLoading();
-            if (doc.exists) {
-                fillTransactionScreen(doc.data());
+            if (transaction) {
+                fillTransactionScreen(transaction);
                 toggleSaveButtonDisable();
             } else {
-                alert('Documento nao encontrado');
+                alert('Transação não encontrada !!!');
                 window.location.href = '../home/home.html';
             }
         })
         .catch(() => {
             hideLoading();
-            alert('Erro ao recuperar documento');
+            alert('Erro ao recuperar a transação !!!');
             window.location.href = '../home/home.html';
         });
 }
@@ -76,34 +72,28 @@ function saveTransaction() {
 
 function save(transaction) {
     showLoading(5000);
-
-    firebase.firestore()
-        .collection('transactions')
-        .add(transaction)
+    transactionService.save(transaction)
         .then(() => {
             hideLoading();
             window.location.href = '../home/home.html';
         })
         .catch(() => {
             hideLoading();
-            alert('Erro ao salvar transação');
+            alert('Erro ao salvar a transação !!!');
         })
 }
 
 
 function update(transaction) {
     showLoading(5000);
-    firebase.firestore()
-        .collection('transactions')
-        .doc(getTransactionUid())
-        .update(transaction)
+    transactionService.update(transaction)
         .then(() => {
             hideLoading();
             window.location.href = '../home/home.html';
         })
         .catch(() => {
             hideLoading();
-            alert('Erro ao atualizar transação');
+            alert('Erro ao atualizar a transação !!!');
         });
 }
 

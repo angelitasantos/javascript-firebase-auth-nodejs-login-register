@@ -1,46 +1,47 @@
 <!doctype html>
-
-<html>
+<html lang='en'>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 
     <title>Home - Controle de Gastos</title>
 
-    <link rel="shortcut icon" href="../../static/img/logo.png" type="image/x-icon">
+    <link rel='shortcut icon' href='../../static/img/logo.png' type='image/x-icon'>
 
-    <link rel="stylesheet" href="../../static/css/reset.css">
-    <link rel="stylesheet" href="../../static/css/global.css">
-    <link rel="stylesheet" href="../../static/css/responsive.css">
-    <link rel="stylesheet" href="../../static/css/styles.css">
+    <link rel='stylesheet' href='../../static/css/reset.css'>
+    <link rel='stylesheet' href='../../static/css/global.css'>
+    <link rel='stylesheet' href='../../static/css/styles.css'>
+    <link rel='stylesheet' href='../../static/css/responsive.css'>
 </head>
 
 <body>
-    <header>
-        <button type="button" class="outline" onclick="logout()">
-            Sair
-        </button>
-    </header>
 
     <main>
-        <section class="centralize">
-            <ol id="transactions"></ol>
+
+        <header>
+            <button type='button' class='outline' onclick='logout()'>Sair</button>
+        </header>
+
+        <section class='centralize'>
+            <ol id='transactions'></ol>
         </section>
 
         <section>
-            <button class="fab fixed bottom right" onclick="newTransaction()">+</button>
+            <button class='fab fixed bottom right' onclick='newTransaction()'>+</button>
         </section>
+
     </main>
 
-    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
-    <script src="../../static/js/firebase-init.js"></script>
-    <script src="../../static/js/auth-guard.js"></script>
-    <script src="../../static/js/loading.js"></script>
-    <script src="../../static/js/services/transaction.service.js"></script>
-    <script src="../../static/js/home.js"></script>
+    <script src='https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js'></script>
+    <script src='https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js'></script>
+    <script src='https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js'></script>
+    <script src='../../static/js/firebase-init.js'></script>
+    <script src='../../static/js/auth-guard.js'></script>
+    <script src='../../static/js/global/loading.js'></script>
+    <script src='../../static/js/services/transaction.service.js'></script>
+    <script src='../../static/js/home.js'></script>
+    
 </body>
 
 </html>

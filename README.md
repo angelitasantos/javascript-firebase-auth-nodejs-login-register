@@ -7,6 +7,3 @@
 
 - Canal:
 [Paulo Alves Dev](https://www.youtube.com/playlist?list=PLMbclvogjXZVxxN06cefN7q5nyt7u5dUq)
-backend
-###### npm install http-server -g
-###### http-server -c-1

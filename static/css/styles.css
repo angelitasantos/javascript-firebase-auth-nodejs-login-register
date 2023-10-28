@@ -69,7 +69,7 @@ fieldset {
 input,
 button,
 select {
-    margin: 0px 5px 2px 5px;
+    margin: 5px;
     padding: 10px;
     border-radius: 5px;
     width: -webkit-fill-available;
@@ -86,11 +86,7 @@ label {
 }
 
 label {
-    margin: 10px 10px 0px 10px;
-}
-
-select {
-    margin: 5px 5px 0px 5px;
+    margin: 0px 10px 0px 10px;
 }
 
 #transactions {
@@ -129,8 +125,8 @@ p {
     margin-top: 10px;
 }
 
-.mb-200 {
-    margin-bottom: 200px;
+.mb-100 {
+    margin-bottom: 100px;
 }
 
 .form-options {

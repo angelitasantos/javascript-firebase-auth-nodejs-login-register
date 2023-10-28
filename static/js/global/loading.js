@@ -11,9 +11,14 @@ function showLoading(timeout) {
     setTimeout(() => hideLoading(), timeout);
 }
 
+
 function hideLoading() {
     const loadings = document.getElementsByClassName('loading');
+    
     if (loadings.length) {
         loadings[0].remove();
     }
 }
+
+
+

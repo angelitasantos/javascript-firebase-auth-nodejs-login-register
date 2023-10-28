@@ -22,8 +22,3 @@ function getUserErrorMessage(error) {
     }
     return error.message;
 }
-
-
-
-
-

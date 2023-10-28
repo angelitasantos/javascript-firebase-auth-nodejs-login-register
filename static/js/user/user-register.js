@@ -18,7 +18,7 @@ function onChangeConfirmPassword() {
 
 
 function login() {
-    showLoading(5000);
+    showLoading(2000);
     window.location.href = '../../index.html'
 }
 
@@ -28,6 +28,7 @@ function register() {
 
     const email = form.email().value;
     const password = form.password().value;
+
     firebase.auth().createUserWithEmailAndPassword(
         email, password
     ).then(() => {
@@ -60,5 +61,9 @@ function toggleRegisterButtonDisable() {
     const emailValid = isEmailValid();
     const passwordValid = isPasswordValid();
     const confirmPasswordValid = isConfirmPasswordValid();
+
     form.registerButton().disabled = !emailValid || !passwordValid || !confirmPasswordValid;
 }
+
+
+
