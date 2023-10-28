@@ -18,13 +18,13 @@ function onChangeConfirmPassword() {
 
 
 function login() {
-    showLoading();
+    showLoading(5000);
     window.location.href = '../../index.html'
 }
 
 
 function register() {
-    showLoading();
+    showLoading(5000);
 
     const email = form.email().value;
     const password = form.password().value;

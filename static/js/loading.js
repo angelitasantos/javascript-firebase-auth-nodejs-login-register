@@ -1,4 +1,4 @@
-function showLoading() {
+function showLoading(timeout) {
     const section = document.createElement('section');
     section.classList.add('loading', 'centralize');
 
@@ -8,7 +8,7 @@ function showLoading() {
 
     document.body.appendChild(section);
 
-    setTimeout(() => hideLoading(), 2000);
+    setTimeout(() => hideLoading(), timeout);
 }
 
 function hideLoading() {

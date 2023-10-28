@@ -31,6 +31,16 @@ button.fab.right {
     right: 32px;
 }
 
+button.danger {
+    width: auto;
+    float: right;
+    display: none;
+}
+
+ol li:hover button.danger {
+    display: block;
+}
+
 .form-button {
     margin-top: 20px;
 }
@@ -49,6 +59,11 @@ button.fab.right {
     background: transparent;
     color: white;
     border: 1px solid white;
+}
+
+.outline.danger {
+    color: red;
+    border-color: red;
 }
 
 .error {

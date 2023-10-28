@@ -41,7 +41,7 @@
 
                 <section class="">
                     <label>Moeda *</label>
-                    <select>
+                    <select id="currency">
                         <option value="USD">Dólar</option>
                         <option value="EUR">Euro</option>
                         <option value="R$" selected>Real</option>
@@ -71,11 +71,12 @@
 
                 <section class="">
                     <label>Descriçao</label>
-                    <input type="text">
+                    <input type="text" id="description">
                 </section>
 
                 <section class="form-button">
-                    <button type="button" class="solid" disabled="true" id="save-button">Salvar</button>
+                    <button type="button" class="solid" disabled="true" id="save-button"
+                        onclick="saveTransaction()">Salvar</button>
                     <button type="button" class="outline" onclick="voltarHome()">Cancelar</button>
                 </section>
             </fieldset>
@@ -89,6 +90,7 @@
     <script src="../../static/js/firebase-init.js"></script>
     <script src="../../static/js/auth-guard.js"></script>
     <script src="../../static/js/loading.js"></script>
+    <script src="../../static/js/services/transaction.service.js"></script>
     <script src="../../static/js/transaction.js"></script>
 
 </body>

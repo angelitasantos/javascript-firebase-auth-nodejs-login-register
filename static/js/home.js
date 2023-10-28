@@ -6,20 +6,15 @@ firebase.auth().onAuthStateChanged(user => {
 
 
 function newTransaction() {
-    window.location.href = "../transaction/transaction.html";
+    window.location.href = '../transaction/transaction.html';
 }
 
 
 function findTransactions(user) {
-    showLoading();
-    firebase.firestore()
-        .collection('transactions')
-        .where('user.uid', '==', user.uid)
-        .orderBy('date', 'desc')
-        .get()
-        .then(snapshot => {
+    showLoading(5000);
+    transactionService.findByUser(user)
+        .then(transactions => {
             hideLoading();
-            const transactions = snapshot.docs.map(doc => doc.data());
             addTransactionsToScreen(transactions);
         })
         .catch(error => {
@@ -27,8 +22,6 @@ function findTransactions(user) {
             console.log(error);
             alert('Erro ao recuperar transacoes');
         })
-
-
 }
 
 
@@ -38,6 +31,19 @@ function addTransactionsToScreen(transactions) {
     transactions.forEach(transaction => {
         const li = document.createElement('li');
         li.classList.add(transaction.type);
+        li.id = transaction.uid;
+        li.addEventListener('click', () => {
+            window.location.href = '../transaction/transaction.html?uid=' + transaction.uid;
+        })
+
+        const deleteButton = document.createElement('button');
+        deleteButton.innerHTML = 'Remover';
+        deleteButton.classList.add('outline', 'danger');
+        deleteButton.addEventListener('click', event => {
+            event.stopPropagation();
+            askRemoveTransaction(transaction);
+        })
+        li.appendChild(deleteButton);
 
         const date = document.createElement('p');
         date.innerHTML = formatDate(transaction.date);
@@ -59,6 +65,33 @@ function addTransactionsToScreen(transactions) {
 
         orderedList.appendChild(li);
     });
+}
+
+
+function askRemoveTransaction(transaction) {
+    const shouldRemove = confirm('Deseja remover a transaçao?');
+    if (shouldRemove) {
+        removeTransaction(transaction);
+    }
+}
+
+
+function removeTransaction(transaction) {
+    showLoading(5000);
+
+    firebase.firestore()
+        .collection('transactions')
+        .doc(transaction.uid)
+        .delete()
+        .then(() => {
+            hideLoading();
+            document.getElementById(transaction.uid).remove();
+        })
+        .catch(error => {
+            hideLoading();
+            console.log(error);
+            alert('Erro ao remover transação');
+        })
 }
 
 
